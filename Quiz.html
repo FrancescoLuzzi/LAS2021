@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;">
+    <meta charset="utf-8" />
+    <title>HomePage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./pagina.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body onkeyup="checkRisposta(event);" >
+    <div class="main">
+        <div class="form w3-round">
+            <div class="postoDomanda">
+                <textarea type="text" class="w3-round" id="domanda" readonly></textarea><br>
+                <input type="text" class="w3-round" id="risposta" readonly>
+            </div>
+            <div class="postoBottoni">
+                <button class="w3-button w3-round w3-black border" id="vero" onclick="checkRisposta('V');" >Vero</button>
+                <button class="w3-button w3-round w3-black border" id="falso" onclick="checkRisposta('F');">Falso</button>
+            </div>
+        </div>
+        <div class="form w3-round postoDomanda">
+            <input type="file" onchange="readFile();" id="file" accept=".txt">
+            <label class="w3-round w3-white" id="pos" readonly>1</label>
+            <button onclick="changeDomanda();">Prossima Domanda</button>
+        </div>
+    </div>
+    <script defer>
+        var domande=[];
+        var num=0;
+        var max=0;
+        var risp= document.getElementById("risposta");
+        var domanda= document.getElementById("domanda");
+        function shuffle(array) {
+            let j=0;
+            let max =array.length;
+            let temp;
+            for (let i = max - 1; i >= 0; i--) {
+                j= Math.floor(Math.random() * (max-1));
+                temp=array[i];
+                array[i]=array[j];
+                array[j]=temp;
+            }
+        }
+        function readFile() {
+            var files = document.getElementById('file').files;
+            if (!files.length) {
+                alert('Please select a file!');
+                return;
+            }
+        
+            var file = files[0];
+            var reader = new FileReader();
+            // If we use onloadend, we need to check the readyState.
+            reader.onloadend = function(evt) {
+            if (evt.target.readyState == FileReader.DONE) { // DONE == 2
+                var domandeTmp=evt.target.result;
+                domandeTmp=domandeTmp.split("\n");
+                var parti;
+                for( var x in domandeTmp){
+                    parti=domandeTmp[x].split("#");
+                    domande[x]=[parti[0].trim(), parti[1].trim()];
+                }
+                max=domandeTmp.length;
+                shuffle(domande);
+                domanda.value=domande[num][0];
+                risp.value="";
+            }
+            };
+            reader.readAsText(file);
+        }
+
+        var output="";
+        var labelPos=document.getElementById("pos");
+        function checkRisposta(risposta){
+            if(typeof(risposta) == "object"){
+                risposta=risposta.key.toUpperCase();
+            }
+            if(risposta !== "V" && risposta !== "F") return;
+            if(risposta == domande[num][1])output="Risposta corretta";
+            else output="Risposta sbagliata";
+            risp.value=output;
+        }
+        function changeDomanda(){
+            if(num<max)num++;
+            else{ num=0;
+            alert("giro di domande finito");
+            }
+            labelPos.innerHTML= +labelPos.innerHTML+1
+            domanda.value=domande[num][0];
+            risp.value="";
+        }
+     </script>
+</body>
+</html>
