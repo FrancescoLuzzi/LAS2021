@@ -22,6 +22,7 @@
         </div>
         <div class="form w3-round postoDomanda">
             <input type="file" onchange="readFile();" id="file" accept=".txt">
+            <label class="w3-round w3-white" id="err" readonly>0</label>
             <label class="w3-round w3-white" id="pos" readonly>1</label>
             <button onclick="changeDomanda();">Prossima Domanda</button>
         </div>
@@ -73,13 +74,15 @@
 
         var output="";
         var labelPos=document.getElementById("pos");
+        var labelSbagl=document.getElementById("err");
+        var errata= false;
         function checkRisposta(risposta){
             if(typeof(risposta) == "object"){
                 risposta=risposta.key.toUpperCase();
             }
-            if(risposta !== "V" && risposta !== "F") return;
+            if((risposta !== "V" && risposta !== "F") || domande[0] == undefined) return;
             if(risposta == domande[num][1])output="Risposta corretta";
-            else output="Risposta sbagliata";
+            else{ output="Risposta sbagliata"; errata=true;}
             risp.value=output;
         }
         function changeDomanda(){
@@ -88,6 +91,7 @@
             alert("giro di domande finito");
             }
             labelPos.innerHTML= +labelPos.innerHTML+1
+            if(errata) labelSbagl.innerHTML= +labelSbagl.innerHTML+1;
             domanda.value=domande[num][0];
             risp.value="";
         }
