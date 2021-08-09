@@ -33,6 +33,7 @@
         var max=0;
         var risp= document.getElementById("risposta");
         var domanda= document.getElementById("domanda");
+        var done=false;
         function shuffle(array) {
             let j=0;
             let max =array.length;
@@ -75,14 +76,15 @@
         var output="";
         var labelPos=document.getElementById("pos");
         var labelSbagl=document.getElementById("err");
-        var errata= false;
+        var errata= true;
         function checkRisposta(risposta){
+            if(done) return;
             if(typeof(risposta) == "object"){
                 risposta=risposta.key.toUpperCase();
             }
             if((risposta !== "V" && risposta !== "F") || domande[0] == undefined) return;
-            if(risposta == domande[num][1])output="Risposta corretta";
-            else{ output="Risposta sbagliata"; errata=true;}
+            if(risposta == domande[num][1]){output="Risposta corretta";errata=false; done=true;}
+            else{ output="Risposta sbagliata"; done=true;}
             risp.value=output;
         }
         function changeDomanda(){
@@ -91,9 +93,11 @@
             alert("giro di domande finito");
             }
             labelPos.innerHTML= +labelPos.innerHTML+1
-            if(errata) labelSbagl.innerHTML= +labelSbagl.innerHTML+1;
+            if(!errata){errata=true;}
+            else labelSbagl.innerHTML= +labelSbagl.innerHTML+1;
             domanda.value=domande[num][0];
             risp.value="";
+            done=false;
         }
      </script>
 </body>
