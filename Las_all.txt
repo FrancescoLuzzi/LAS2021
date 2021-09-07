@@ -98,7 +98,7 @@ La pianificazione di un task con at non può essere revocata # F
 Il sistema sudo permette unicamente di eseguire comandi coi privilegi di root # F
 Il comando sudo permette di differenziare quali comandi un utente può eseguire coi privilegi di root # V
 Gli alias di bash possono definire o referenziare (espandere) altri alias # V
-Senza permesso di lettura su di una direcotry, non si possono utilizzare i file in essa contenuti # F
+Senza permesso di lettura su di una directory, non si possono utilizzare i file in essa contenuti # F
 Un task pianificato con cron come */5 8 1 * * programma viene eseguito 12 volte al mese # V
 La pianificazione di attività con cron ha un periodo massimo arbitrario # F
 top è comando più adatto per catturare in un momento preciso lo stato di tutti i processi #F
@@ -108,3 +108,29 @@ Il sistema di logging integrato in systemd è avviato prima di syslogd # V
 Il comando ss è in grado di riportare alcune informazioni sulla connessione # V
 top è comando più adatto per catturare in un momento preciso lo stato di tutti i processi # F
 I sistemi SAN sono più efficienti dei sistemi NAS # V
+Non esistono certificazioni professionali riconosciute in ambito Linux # F
+L'utente che crea un file può decidere quale deve essere il gruppo proprietario, tra quelli di cui è membro # V
+Ogni file ha un unico utente ed un unico gruppo come proprietari # V
+L'azione mask di systemctl impedisce completamente l'avvio del servizio # V
+La pianificazione di attività con cron può avere una frequenza arbitraria (senza alcun limite di frequenza) # F
+Le azioni enable e disable di systemctl agiscono istantaneamente sul servizio # F
+La pianificazione di un task con at può essere monitorata e revocata # V
+Le facility sono un insieme ordinato # F
+syslog classifica i messaggi principalmente sulla base di un'etichetta che specifica l'argomento e importanza # V
+L'etichetta lacal1.info cattura unicamente i messaggi con etichetta specificata # F
+lsof mostra solo i file sul FS correntemente in uso # F
+Il downtime è principalmente causato da guasti hardware # F
+Tutti i livelli RAID da 1 al 6 aumentano la tolleranza ai guasti # V
+I tipi di attributo utilizzabili nelle entry LDAP decono essere definiti manualmente in uno schema da ogni amministratore di directory, NON esistono collezioni standard # F
+Le entry LDAP possono essere trovate conoscendo una combinazione di valori di attributi # V
+LDAP utilizza un modello a oggetti dei dati # V
+Le entry di LDAP sono organizzate gerarchicamente # V
+SNMP è un protocollo applicativo trasportato su TCP # F
+Tutte le versioni di SNMP prevedono sistemi di autenticazione robusti # F
+Il MIB è un modello sviluppato unicamente per definire un tassonomia di informazioni relative ai protocolli di rete # F
+Il comando tcpdump non permette di rilevare se un processo è in ascolto su di una porta TCP # V
+La possibilità di cancellare un file dipende dai permessi attribuiti al proprietario del file stesso # F
+Si possono utilizzare i file contenuti in una directory, sotto certe condizioni, anche se non si ha il permesso di leggere la directory # V
+Ripristinare l'integrità di un RAID dopo la disconnessione momentanea di un disco (non guasto) può richiedere vari giorni # F
+E' consigliabile che l'amministratore effettui il login come utente standard, in quanto la maggior marte delle attività non richiedono i privilegi di root # V
+L'amministratore di sistema può subire conseguenze legali del proprio operato # V

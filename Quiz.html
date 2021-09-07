@@ -78,10 +78,12 @@
         var labelSbagl=document.getElementById("err");
         var errata= true;
         function checkRisposta(risposta){
-            if(done) return;
+            
             if(typeof(risposta) == "object"){
                 risposta=risposta.key.toUpperCase();
             }
+	    if(risposta == "ENTER"){changeDomanda(); return;}
+	    if(done) return;
             if((risposta !== "V" && risposta !== "F") || domande[0] == undefined) return;
             if(risposta == domande[num][1]){output="Risposta corretta";errata=false; done=true;}
             else{ output="Risposta sbagliata"; done=true;}
