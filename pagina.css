@@ -1,38 +1,62 @@
-.postoDomanda , .postoBottoni{
-    padding: 1rem;
-    margin: 0.5rem;
+.postoDomanda,
+.postoBottoni,
+.postoErrori {
+	padding: 1rem;
+	margin: 0.5rem;
 }
 
-
-#domanda{
-    width: 40%;
-    height: 6rem;
-    resize: none;
+.postoErrori {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
-#risposta{
-    width: 20%;
+.risposta-errata {
+	background-color: lightgrey;
+	border: solid black 2px;
+	width: 75%;
+	min-height: 50px;
+	margin: 0.3rem;
 }
 
-body{
-    background-color: lightgrey;
-}
-.form{
-    background-color: grey;
-    border: solid black 2px;
-    margin: 1rem;
+#domanda {
+	width: 40%;
+	height: 6rem;
+	resize: none;
 }
 
-.main{
-    padding: 1rem;
-    text-align: center;
-    margin: 50px;
+#risposta {
+	width: 20%;
 }
 
-.border{
-    border: solid black 5px;
+body {
+	background-color: lightgrey;
+}
+.form {
+	background-color: grey;
+	border: solid black 2px;
+	margin: 1rem;
 }
 
-#pos, #err{
-    padding: 0.35rem;
+.main {
+	padding: 1rem;
+	text-align: center;
+	margin: 50px;
+}
+
+.border {
+	border: solid black 5px;
+}
+
+#pos,
+#err {
+	padding: 0.35rem;
+}
+
+* {
+	font-family: sans-serif !important;
+}
+
+h2 {
+	font-weight: bold !important;
 }
