@@ -11,7 +11,6 @@ L' amministratore di sistema non ha responsabilità legali, solo operative # F
 Gli indirizzi nel range 169.254.1.0 - 169.254.254.255 sono riservati all'allocazione automatica link local # V
 Una distribuzione LTS differisce da una standard per la durata del supporto offerto dal produttore # V
 Un servizio di tipo oneshot di systemd può risultare attivo anche se non corrisponde ad alcun processo in esecuzione # V
-Le pagine di manuale sono divise in sezioni # V
 Un disco e una sua partizione sono entrambi dispositivi a blocchi # V
 I sistemi NAS sono più efficienti dei sistemi SAN # F
 Una entry LDAP può essere istanza di più classi simultaneamente # V
@@ -128,9 +127,28 @@ Le entry di LDAP sono organizzate gerarchicamente # V
 SNMP è un protocollo applicativo trasportato su TCP # F
 Tutte le versioni di SNMP prevedono sistemi di autenticazione robusti # F
 Il MIB è un modello sviluppato unicamente per definire un tassonomia di informazioni relative ai protocolli di rete # F
-Il comando tcpdump non permette di rilevare se un processo è in ascolto su di una porta TCP # V
 La possibilità di cancellare un file dipende dai permessi attribuiti al proprietario del file stesso # F
 Si possono utilizzare i file contenuti in una directory, sotto certe condizioni, anche se non si ha il permesso di leggere la directory # V
 Ripristinare l'integrità di un RAID dopo la disconnessione momentanea di un disco (non guasto) può richiedere vari giorni # F
 E' consigliabile che l'amministratore effettui il login come utente standard, in quanto la maggior marte delle attività non richiedono i privilegi di root # V
 L'amministratore di sistema può subire conseguenze legali del proprio operato # V
+Gli utenti membri di un gruppo proprietario di un file possono deciderne i permessi # F
+La necessità di eseguire backup non dipende dall'affidabilità del sistema di storage # V
+Il comando sudo richiede all'utente la sua stessa password per autorizzare l'esecuzione privilegiata di comandi # V
+Ogni man page ha un nome intresecamente univoco # V
+L'utente proprietario di un file deve far parte del gruppo proprietario dello stesso file # F
+Un file in /dev può corrispondere a una famiglia di device installati sul sistema # F
+Un servizio di tipo oneshot può risultare attivo solo se corrisponde a un processo in esecuzione # F
+La pianificazione di attività con cron ha un periodo massimo di 1 anno # V
+Un task pianificato con cron come "10 22 2,20 * 4 programma" viene eseguito almeno 4 volte al mese # V
+top è un comanda più adatto per seguire interattivamente lo stato di uso del sistema # V
+dnsmasq può servire richieste su interfacce diverse a patto che le configurazioni siano tutte uniformi # F
+dpkg risolve automaticamente le dipendenze recuperando i pacchetti necessari in fase di installazione di un pacchetto # F
+apt risolve automaticamente le dipendenze recuperando i pacchetti necessari in fase di installazione di un pacchetto # V
+Una Object Class specifica variabili e metodi disponibili a un oggetto che lo istanzia # F
+Il Distinguished Name identifica la posizione nel DIT di una entry LDAP # V
+Gli attribuiti di una entry LDAP sono valori etichettati con un tipo # V
+Si può interrogare un agent SNMP in merito ad un managed object solo conoscendo a priori l'OID # F
+Si definisce agent il software di interfaccia di un dispositivo fisico connesso in rete, che supporta il protocollo SNMP # V
+In SNMP l'interazione più comune tra manager e agent è di tipo richiesta-risposta # V
+Gli utenti membri del gruppo proprietario di un file possono deciderne i permessi # F
