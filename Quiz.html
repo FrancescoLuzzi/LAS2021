@@ -147,6 +147,11 @@
 			}
 
 			function changeDomanda() {
+				if (num < max) num++;
+				else {
+					num = 0;
+					alert('giro di domande finito');
+				}
 				labelPos.innerHTML = +labelPos.innerHTML + 1;
 				if (!errata) {
 					errata = true;
@@ -157,12 +162,6 @@
 				domanda.value = domande[num][0];
 				risp.value = '';
 				done = false;
-
-				if (num < max) num++;
-				else {
-					num = 0;
-					alert('giro di domande finito');
-				}
 			}
 		</script>
 	</body>
