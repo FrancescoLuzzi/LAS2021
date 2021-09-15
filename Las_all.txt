@@ -152,3 +152,15 @@ Si può interrogare un agent SNMP in merito ad un managed object solo conoscendo
 Si definisce agent il software di interfaccia di un dispositivo fisico connesso in rete, che supporta il protocollo SNMP # V
 In SNMP l'interazione più comune tra manager e agent è di tipo richiesta-risposta # V
 Gli utenti membri del gruppo proprietario di un file possono deciderne i permessi # F
+L'utente proprietario di un file potrebbe avere permessi di accesso a tale file più limitati di altri utenti del sistema # V 
+I messaggi inviati a un sistema di logging centralizzato devono essere preventivamente marcati con un timestamp accurato # F 
+top riassume in una schermata l'uso di cpu, memoria, I/O su disco e I/O via rete # F 
+DNS è il sistema per la risoluzione dei nomi host in indirizzi IP # V 
+Nell'architettura LVM, un Logical Volume viene utlizzato analogamente a una tradizionale partizione di un disco # V 
+L'installazione manuale da sorgenti è più vincolante rispetto all'installazione da binari precompilati # F 
+Una entry LDAP può essere istanza di più classi strutturali LDAP simultaneamente # F 
+Gli attributi di una entry LDAP sono valori etichettati con un tipo # V 
+LDAP è un database general-purpose, ma nella pratica viene usato solo per distribuire informazioni relative a utenti # F 
+L'assegnamento di un indirizzo IPv6 link local secondo il modello SLAAC avviene prima di interrogare server che potrebbero assegnare un indirizzo diverso all'host # V 
+Le syscall standard (open, close, read, ...) sui file in /dev vengono gestite dai device driver identificati dal nome del file # F 
+È consigliabile che l'amministratore effettui il login come utente standard, in quanto la maggior parte delle attività non richiedono i privilegi di root # V
