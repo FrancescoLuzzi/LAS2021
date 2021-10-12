@@ -162,5 +162,6 @@ Una entry LDAP può essere istanza di più classi strutturali LDAP simultaneamen
 Gli attributi di una entry LDAP sono valori etichettati con un tipo # V 
 LDAP è un database general-purpose, ma nella pratica viene usato solo per distribuire informazioni relative a utenti # F 
 L'assegnamento di un indirizzo IPv6 link local secondo il modello SLAAC avviene prima di interrogare server che potrebbero assegnare un indirizzo diverso all'host # V 
-Le syscall standard (open, close, read, ...) sui file in /dev vengono gestite dai device driver identificati dal nome del file # F 
+Le syscall standard (open, close, read, ...) sui file in /dev vengono gestite dai device driver identificati dal nome del file # F
+Le syscall standard (open, close, read, ...) sui file in /dev vengono gestite dai device driver identificati da Major e Minor number # V
 È consigliabile che l'amministratore effettui il login come utente standard, in quanto la maggior parte delle attività non richiedono i privilegi di root # V
