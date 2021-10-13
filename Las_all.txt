@@ -147,7 +147,6 @@ dpkg risolve automaticamente le dipendenze recuperando i pacchetti necessari in 
 apt risolve automaticamente le dipendenze recuperando i pacchetti necessari in fase di installazione di un pacchetto # V
 Una Object Class specifica variabili e metodi disponibili a un oggetto che lo istanzia # F
 Il Distinguished Name identifica la posizione nel DIT di una entry LDAP # V
-Gli attribuiti di una entry LDAP sono valori etichettati con un tipo # V
 Si può interrogare un agent SNMP in merito ad un managed object solo conoscendo a priori l'OID # F
 Si definisce agent il software di interfaccia di un dispositivo fisico connesso in rete, che supporta il protocollo SNMP # V
 In SNMP l'interazione più comune tra manager e agent è di tipo richiesta-risposta # V

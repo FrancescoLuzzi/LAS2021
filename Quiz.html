@@ -93,14 +93,13 @@
 				if (done) return;
 				if ((risposta !== 'V' && risposta !== 'F') || domande[0] == undefined) return;
 				if (risposta == domande[num][1]) {
-					output = 'Risposta corretta';
 					errata = false;
 					done = true;
+					changeDomanda();
 				} else {
-					output = 'Risposta sbagliata';
+					risp.value = 'Risposta sbagliata';
 					done = true;
 				}
-				risp.value = output;
 			}
 
 			function addErrata() {
