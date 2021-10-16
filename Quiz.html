@@ -12,16 +12,44 @@
 		<div class="main">
 			<div class="form w3-round">
 				<div class="postoDomanda">
-					<textarea type="text" class="w3-round" id="domanda" readonly></textarea><br />
-					<input type="text" class="w3-round" id="risposta" readonly />
+					<textarea
+						type="text"
+						class="w3-round"
+						id="domanda"
+						readonly
+					></textarea
+					><br />
+					<input
+						type="text"
+						class="w3-round"
+						id="risposta"
+						readonly
+					/>
 				</div>
 				<div class="postoBottoni">
-					<button class="w3-button w3-round w3-black border" id="vero" onclick="checkRisposta('V');">Vero</button>
-					<button class="w3-button w3-round w3-black border" id="falso" onclick="checkRisposta('F');">Falso</button>
+					<button
+						class="w3-button w3-round w3-black border"
+						id="vero"
+						onclick="checkRisposta('V');"
+					>
+						Vero
+					</button>
+					<button
+						class="w3-button w3-round w3-black border"
+						id="falso"
+						onclick="checkRisposta('F');"
+					>
+						Falso
+					</button>
 				</div>
 			</div>
 			<div class="form w3-round postoDomanda">
-				<input type="file" onchange="readFile();" id="file" accept=".txt" />
+				<input
+					type="file"
+					onchange="readFile();"
+					id="file"
+					accept=".txt"
+				/>
 				<label class="w3-round w3-white" id="err" readonly>0</label>
 				<label class="w3-round w3-white" id="pos" readonly>1</label>
 				<button onclick="changeDomanda();">Prossima Domanda</button>
@@ -91,7 +119,11 @@
 					return;
 				}
 				if (done) return;
-				if ((risposta !== 'V' && risposta !== 'F') || domande[0] == undefined) return;
+				if (
+					(risposta !== 'V' && risposta !== 'F') ||
+					domande[0] == undefined
+				)
+					return;
 				if (risposta == domande[num][1]) {
 					errata = false;
 					done = true;
@@ -104,14 +136,18 @@
 
 			function addErrata() {
 				var node = document.createElement('div');
-				node.appendChild(document.createTextNode(domande[num - 1][0] + '::=::' + domande[num - 1][1]));
+				node.appendChild(
+					document.createTextNode(
+						domande[num - 1][0] + '::=::' + domande[num - 1][1]
+					)
+				);
 				node.classList = 'risposta-errata w3-round';
 				errori.appendChild(node);
 			}
 
 			function changeDomanda() {
-				if (num < max) num++;
-				else {
+				num++;
+				if (num >= max) {
 					num = 0;
 					alert('giro di domande finito');
 				}
