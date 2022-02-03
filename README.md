@@ -1,5 +1,5 @@
-# LAS2021
-Piccola pagina web per preparare l'esame teorico di LAS
+# LINUX THEORY
+Piccola pagina web per rinfrescare la teoria su linux!
 
 # Formato entry del file Las_all
 
